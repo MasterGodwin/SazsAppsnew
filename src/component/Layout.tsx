@@ -4,7 +4,7 @@ import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import Header from "./Header";
 import SubHeader from "./Subheader";
 import SideMenu, { Createsite_NAV } from "./Menu/Sidemenu";
-import MasterMenu, { Master_NAV } from "./Menu/Mastermenu";
+import MasterMenu from "./Menu/Mastermenu";
 import WorkingDirectorySideMenu from "./Menu/workingdirectory";
 
 const PATH_TO_ID: Record<string, string> = {
@@ -25,10 +25,7 @@ const PATH_TO_ID: Record<string, string> = {
   "/working-directory/checkbox": "wd-checkbox",
 };
 
-const SITE_PATHS = new Set([
-  "/site/dashboard", "/tenants/create", "/TenantsList",
-  "/branches/create", "/branches", "/users/create", "/users",
-]);
+
 const MASTER_PATHS = new Set([
   "/master/dashboard", "/master/country/create",
   "/master/state/create", "/master/city/create",
@@ -74,7 +71,7 @@ const Layout: React.FC = () => {
     if (item.path) navigate(item.path);
   };
 
-  const handleSearchSelect = (path: string, tab: string) => {
+  const handleSearchSelect = (path: string) => {
     navigate(path);
   };
 
@@ -120,7 +117,7 @@ const Layout: React.FC = () => {
 
       <div className="flex flex-1 overflow-hidden">
         <aside
-          className={`flex-shrink-0 flex flex-col h-full bg-white border-r border-gray-200 transition-all duration-300
+          className={`shrink-0 flex flex-col h-full bg-white border-r border-gray-200 transition-all duration-300
             ${sideOpen ? "w-56" : "w-0 overflow-hidden"}`}
         >
           <div className="flex-1 overflow-y-auto overflow-x-hidden">

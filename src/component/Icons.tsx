@@ -1,4 +1,3 @@
-import React from "react";
 import LogoImg from "../assets/Icon/LogoWhite.png";
 
 export const IcMenu     = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24"><path strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>;
